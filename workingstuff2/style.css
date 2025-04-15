@@ -1,4 +1,4 @@
-body {
+.body {
     font-family: Arial, sans-serif;
     background: #2d2c2c;
     display: flex;
@@ -31,7 +31,7 @@ body {
     padding: 30px;
 }
 
-input[type="text"] {
+.user-input[type="text"] {
     width: 70%;
     padding: 8px;
 }
