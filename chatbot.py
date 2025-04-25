@@ -10,29 +10,9 @@ if os.path.exists(DATA_FILE):
     with open(DATA_FILE, "r") as file:
         faq = json.load(file)
 else:
-<<<<<<< HEAD
     faq = {}
 
 # Save memory to file
-=======
-
- import requests
-
-def get_response(user_input):
-    url = "http://localhost:11434/api/generate"
-    payload = {
-        "model": "llama2",
-        "prompt": user_input,
-        "stream": False
-    }
-
-    try:
-        response = requests.post(url, json=payload)
-        return response.json()["response"].strip()
-    except Exception as e:
-        return f"Error: {str(e)}"
-    
->>>>>>> f591a1a46ee850ff3e11ceaa117964debfcf9a9c
 def save_data():
     with open(DATA_FILE, "w") as file:
         json.dump(faq, file, indent=4)
