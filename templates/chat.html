@@ -1,43 +1,16 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Smart Chatbot</title>
-    <link rel="stylesheet" href="../workingstuff2/style.css">
+    <title>Smart-Chatbot</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-    <div class="chat-container">
-        <div id="chat-box"></div>
-        <input type="text" id="user-input" placeholder="Ask me something..." autofocus>
-        <button onclick=sendMessage()>Send</button>
+    <div class="chatbox">
+        <div id="chatlog"></div>
+        <input type="text" id="user-input" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
     </div>
-    
-    <!-- <script src="../workingstuff2/script.js"></script> -->
-     <script>
-        function sendMessage() {
-    const input = document.getElementById("user-input");
-    const message = input.value;
-    if (!message) return;
-
-    const chatBox = document.getElementById("chat-box");
-    chatBox.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
-    input.value = "";
-
-    fetch("/get", {
-        method: "POST",
-        body: JSON.stringify({ message }),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data.response);
-        chatBox.innerHTML += `<p><strong>Bot:</strong> ${data.response}</p>`;
-        chatBox.scrollTop = chatBox.scrollHeight;
-    });
-}
-
-     </script>
+    <script src="../static/script.js"></script>
 </body>
 </html>

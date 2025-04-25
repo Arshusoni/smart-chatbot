@@ -1,7 +1,8 @@
+# app.py
 from flask import Flask, render_template, request, jsonify
 from chatbot import get_response
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='./static/')
 
 @app.route("/")
 def home():
